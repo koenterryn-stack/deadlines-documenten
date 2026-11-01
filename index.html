@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadlines bij de documenten — welzijnswetgeving</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Overzicht van de wettelijke termijnen bij de verplichte documenten uit de Belgische welzijnsregelgeving (Codex): hoe vaak opstellen of bijwerken, tegen welke deadline, hoelang bewaren. Volgens onze telling, stand november 2026, met links naar de officiële wettekst.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#f6f3ec; --panel:#fffdf8; --fg:#232019; --muted:#6a6356; --line:#e2ddd0;
+  --accent:#b0620d; --accent-soft:#f4e7d4; --ok:#2f6b43; --mark:#fff2d4;
+  --s-terug:#1f5f99; --s-melding:#a23d1a; --s-bij:#7a5a1e;
+  --fd:"Fraunces",Georgia,serif; --fb:"Inter",system-ui,sans-serif; --fm:"Roboto Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17150f; --panel:#1f1c15; --fg:#ece7dc; --muted:#a79e8d; --line:#332e24;
+  --accent:#e0a24e; --accent-soft:#2c2213; --ok:#7fcf9e; --mark:#3a2f16;
+  --s-terug:#7fb3e6; --s-melding:#e8936a; --s-bij:#d8b36a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17150f; --panel:#1f1c15; --fg:#ece7dc; --muted:#a79e8d; --line:#332e24;
+  --accent:#e0a24e; --accent-soft:#2c2213; --ok:#7fcf9e; --mark:#3a2f16;
+  --s-terug:#7fb3e6; --s-melding:#e8936a; --s-bij:#d8b36a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--fb);
+  padding:0 max(18px,env(safe-area-inset-left)) 64px max(18px,env(safe-area-inset-right))}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:var(--accent)}
+header{padding:40px 0 20px;border-bottom:2px solid var(--fg);margin-bottom:22px}
+.eyebrow{font:600 .76rem var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font:600 clamp(2rem,5vw,3rem)/1.04 var(--fd);margin:.2em 0 .3em;text-wrap:balance;letter-spacing:-.01em}
+.intro{color:var(--muted);max-width:68ch;font-size:1.05rem}
+.grouplink{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:var(--accent);color:#fff;text-decoration:none;
+  font-weight:600;padding:10px 16px;border-radius:7px;font-size:.95rem}
+.grouplink:hover{filter:brightness(1.07)}
+.telmelding{margin-top:16px;font-size:.9rem;color:var(--muted);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.telmelding b{color:var(--fg)}
+.controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
+.controls input,.controls select{font:15px var(--fb);color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:9px 11px}
+.controls input[type=search]{flex:1;min-width:200px}
+.count{font-size:.86rem;color:var(--muted);margin:14px 0 4px}
+.grp{font:600 1.3rem var(--fd);margin:30px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line);color:var(--fg)}
+.doc{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:15px 17px;margin-bottom:11px;break-inside:avoid}
+.doc-head{display:flex;gap:12px;align-items:baseline;justify-content:space-between}
+.doc-head h3{font:600 1.08rem/1.3 var(--fb);margin:0}
+.soort{flex:none;font:600 .68rem var(--fb);letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;color:#fff;white-space:nowrap}
+.s-terugkerend,.s-terug{background:var(--s-terug)} .s-melding{background:var(--s-melding)} .s-bij{background:var(--s-bij)}
+.termijn{margin-top:9px;font-size:1.05rem;font-weight:500}
+.bew{margin-top:5px;font-size:.92rem;color:var(--muted)}
+.bew .lbl,.meta .art{font:600 .7rem var(--fm);letter-spacing:.03em;text-transform:uppercase}
+.bew .lbl{color:var(--ok);margin-right:4px}
+.meta{margin-top:10px;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;border-top:1px dashed var(--line);padding-top:9px}
+.meta .art{color:var(--muted)}
+.bron{font-size:.9rem;font-weight:600;text-decoration:none;margin-left:auto}
+.bron:hover{text-decoration:underline}
+.empty{padding:26px;color:var(--muted);text-align:center}
+footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;max-width:72ch;display:flex;flex-direction:column;gap:10px}
+.fr{background:var(--accent-soft);border-radius:7px;padding:11px 14px;color:var(--fg)}
+mark{background:var(--mark);color:inherit}
+@media print{
+  .controls{display:none} header{border-color:#000} body{background:#fff;color:#000;padding:0 10mm}
+  .doc{border:1px solid #bbb;box-shadow:none} a{color:#000} .grouplink{display:none}
+  .soort{border:1px solid #000;color:#000;background:#fff!important}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Welzijnswetgeving · weetje</div>
+  <h1>Deadlines bij de documenten</h1>
+  <p class="intro">Elk verplicht document uit de welzijnsregelgeving heeft zijn eigen ritme: sommige stel je één keer op, andere werk je elk jaar bij, en voor sommige geldt een harde meldings- of bewaartermijn. Dit overzicht zet per document de termijn, het wetsartikel en een link naar de officiële wettekst op een rij — handig om snel te checken of je in orde bent.</p>
+  <a class="grouplink" href="https://www.linkedin.com/groups/42836426/" target="_blank" rel="noopener">→ Groep Welzijnswetgeving · Législation sur le bien-être au travail</a>
+  <div class="telmelding"><b>Volgens onze telling (stand november 2026).</b> <span>146 documenten uit de Codex over het welzijn op het werk. De links gaan naar de officiële wettekst (FOD WASO / Justel).</span></div>
+</header>
+
+<div class="controls">
+  <input type="search" id="q" placeholder="Zoek op document, termijn of artikel…" aria-label="Zoeken">
+  <select id="fboek" aria-label="Filter op Codex-boek"><option value="">Alle Codex-boeken</option><option value="I">Boek I — Algemene beginselen</option><option value="II">Boek II — Organisatie van de preventie</option><option value="III">Boek III — Arbeidsplaatsen</option><option value="IV">Boek IV — Arbeidsmiddelen</option><option value="V">Boek V — Omgevingsfactoren en fysische agentia</option><option value="VI">Boek VI — Chemische, kankerverwekkende en biologische agentia</option><option value="VII">Boek VII — Biologische agentia</option><option value="VIII">Boek VIII — Ergonomie en verzwarende arbeidsomstandigheden</option><option value="IX">Boek IX — Collectieve en persoonlijke bescherming</option><option value="X">Boek X — Bijzondere werknemerscategorieën en situaties</option></select>
+  <select id="fsoort" aria-label="Filter op soort"><option value="">Alle soorten</option><option value="terugkerend">terugkerend</option><option value="melding/deadline">melding/deadline</option><option value="bij gebeurtenis">bij gebeurtenis</option></select>
+</div>
+<p class="count" id="count"></p>
+
+<main id="list">
+<h2 class="grp" data-boek="I">Boek I — Algemene beginselen</h2>
+<article class="doc" data-boek="I" data-soort="terugkerend" data-hay="affiche contactgegevens preventieadviseurs permanent, bijwerken bij wijziging art. i.2-17, §2, i.3-53 t.e.m. i.3-56, ii.3-36 codex i">
+  <div class="doc-head"><h3>Affiche contactgegevens preventieadviseurs</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Permanent, bijwerken bij wijziging</div>
+  
+  <div class="meta"><span class="art">art. I.2-17, §2, I.3-53 t.e.m. I.3-56, II.3-36 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%202%20Algemene%20beginselen%20betreffende%20het%20welzijnsbeleid.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="bij gebeurtenis" data-hay="arbeidsongevallensteekkaart bij elk ongeval met ≥ 4 dagen arbeidsongeschiktheid art. i.6-12, ii.1-6 §1 2° c), bijlage ii.1-4 codex i">
+  <div class="doc-head"><h3>Arbeidsongevallensteekkaart</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij elk ongeval met ≥ 4 dagen arbeidsongeschiktheid</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Minstens 10 jaar door de werkgever</div>
+  <div class="meta"><span class="art">art. I.6-12, II.1-6 §1 2° c), bijlage II.1-4 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%206%20Maatregelen%20in%20geval%20van%20arbeidsongeval.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="terugkerend" data-hay="collectief re-integratiebeleid en jaarrapportage regelmatig overleg; jaarlijks gegevens aan comité; jaarlijkse evaluatie art. i.4-79 codex i">
+  <div class="doc-head"><h3>Collectief re-integratiebeleid en jaarrapportage</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Regelmatig overleg; jaarlijks gegevens aan Comité; jaarlijkse evaluatie</div>
+  
+  <div class="meta"><span class="art">art. I.4-79 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="bij gebeurtenis" data-hay="documenten informele psychosociale interventie bevestiging eerste onderhoud op vraag; vastlegging van het type interventie bij de start art. i.3-11 en i.3-12 codex i">
+  <div class="doc-head"><h3>Documenten informele psychosociale interventie</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bevestiging eerste onderhoud op vraag; vastlegging van het type interventie bij de start</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd in titel 3</div>
+  <div class="meta"><span class="art">art. I.3-11 en I.3-12 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%203%20Preventie%20van%20psychosociale%20risico%E2%80%99s%20op%20het%20werk.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="bij gebeurtenis" data-hay="formulier voor de gezondheidsbeoordeling na elke gezondheidsbeoordeling art. i.4-46, i.4-52 codex; art. vii.1-63; x.2-7 §3, x.4-6 §2, x.4-7, x.5-9 §2, x.5-10 i">
+  <div class="doc-head"><h3>Formulier voor de gezondheidsbeoordeling</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Na elke gezondheidsbeoordeling</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Zolang werknemer in dienst: minstens de laatste 3 jaar + alle formulieren met aanbevelingen</div>
+  <div class="meta"><span class="art">art. I.4-46, I.4-52 Codex; art. VII.1-63; X.2-7 §3, X.4-6 §2, X.4-7, X.5-9 §2, X.5-10</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="bij gebeurtenis" data-hay="gemotiveerd verslag (geen re-integratieplan mogelijk) zelfde termijn als het re-integratieplan art. i.4-74, §4 codex i">
+  <div class="doc-head"><h3>Gemotiveerd verslag (geen re-integratieplan mogelijk)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Zelfde termijn als het re-integratieplan</div>
+  
+  <div class="meta"><span class="art">art. I.4-74, §4 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="melding/deadline" data-hay="gemotiveerde beslissing werkgever (psychosociaal verzoek) collectief: binnen 3 maanden (+3); individueel: binnen 2 maanden na het advies; voornemen individuele maatregelen binnen 1 maand; bewarende maatregelen zo snel mogelijk art. i.3-19, i.3-20, i.3-28, i.3-29, i.3-38 codex i">
+  <div class="doc-head"><h3>Gemotiveerde beslissing werkgever (psychosociaal verzoek)</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Collectief: binnen 3 maanden (+3); individueel: binnen 2 maanden na het advies; voornemen individuele maatregelen binnen 1 maand; bewarende maatregelen zo snel mogelijk</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd (kopie in dossier PA)</div>
+  <div class="meta"><span class="art">art. I.3-19, I.3-20, I.3-28, I.3-29, I.3-38 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%203%20Preventie%20van%20psychosociale%20risico%E2%80%99s%20op%20het%20werk.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="terugkerend" data-hay="globaal verslag gezondheidstoezicht (pa-arbeidsarts) minstens jaarlijks art. i.4-32, §6; i.4-33 codex i">
+  <div class="doc-head"><h3>Globaal verslag gezondheidstoezicht (PA-arbeidsarts)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Minstens jaarlijks</div>
+  
+  <div class="meta"><span class="art">art. I.4-32, §6; I.4-33 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="terugkerend" data-hay="jaaractieplan (jap) jaarlijks per dienstjaar; ontwerp uiterlijk de 1e dag van de 2e maand vóór het dienstjaar aan het comité art. i.2-9, i.2-10 codex; art. viii.1-4 i">
+  <div class="doc-head"><h3>Jaaractieplan (JAP)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Jaarlijks per dienstjaar; ontwerp uiterlijk de 1e dag van de 2e maand vóór het dienstjaar aan het Comité</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd in Boek I titel 2</div>
+  <div class="meta"><span class="art">art. I.2-9, I.2-10 Codex; art. VIII.1-4</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%202%20Algemene%20beginselen%20betreffende%20het%20welzijnsbeleid.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="terugkerend" data-hay="jaarverslag interne dienst (idpbw) jaarlijks; minstens 15 dagen vóór de februarivergadering aan de gewone leden van het comité, afschrift binnen 30 dagen aan alle leden, or en vakbondsafvaardiging (ii.7-24) art. i.2-22, ii.1-6 §1 2° b), bijlage ii.1-3, ii.7-24 codex i">
+  <div class="doc-head"><h3>Jaarverslag interne dienst (IDPBW)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Jaarlijks; minstens 15 dagen vóór de februarivergadering aan de gewone leden van het Comité, afschrift binnen 30 dagen aan alle leden, OR en vakbondsafvaardiging (II.7-24)</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd in Boek II titel 1</div>
+  <div class="meta"><span class="art">art. I.2-22, II.1-6 §1 2° b), bijlage II.1-3, II.7-24 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%201%20IDPB.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="terugkerend" data-hay="lijst veiligheidsfuncties, functies met verhoogde waakzaamheid en activiteiten met welbepaald risico bijhouden; jaarlijks aan pa-arbeidsarts voor schriftelijk advies; jaarlijks bij jap; comité raadplegen art. i.4-5, §1, 1°; i.4-6; i.4-7; i.4-8 codex i">
+  <div class="doc-head"><h3>Lijst veiligheidsfuncties, functies met verhoogde waakzaamheid en activiteiten met welbepaald risico</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden; jaarlijks aan PA-arbeidsarts voor schriftelijk advies; jaarlijks bij JAP; Comité raadplegen</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Minstens 5 jaar vanaf opstelling</div>
+  <div class="meta"><span class="art">art. I.4-5, §1, 1°; I.4-6; I.4-7; I.4-8 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="terugkerend" data-hay="naamlijsten gezondheidstoezicht (incl. inentingen/tuberculinetests) bijhouden; bij jap; minstens jaarlijks afschrift aan pa-arbeidsarts; wijziging/schrapping enkel met akkoord pa-arbeidsarts en comité art. i.4-5, §1, 2° en 3°, §2; i.4-6, §2; i.4-7; i.4-8 codex i">
+  <div class="doc-head"><h3>Naamlijsten gezondheidstoezicht (incl. inentingen/tuberculinetests)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden; bij JAP; minstens jaarlijks afschrift aan PA-arbeidsarts; wijziging/schrapping enkel met akkoord PA-arbeidsarts en Comité</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Minstens 5 jaar vanaf opstelling</div>
+  <div class="meta"><span class="art">art. I.4-5, §1, 2° en 3°, §2; I.4-6, §2; I.4-7; I.4-8 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="bij gebeurtenis" data-hay="re-integratieplan max. 63 kalenderdagen (beslissing a) of 6 maanden (beslissing b) na ontvangst re-integratiebeoordeling; werknemer heeft 14 kalenderdagen om in te stemmen art. i.4-74, i.4-75 codex i">
+  <div class="doc-head"><h3>Re-integratieplan</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Max. 63 kalenderdagen (beslissing A) of 6 maanden (beslissing B) na ontvangst re-integratiebeoordeling; werknemer heeft 14 kalenderdagen om in te stemmen</div>
+  
+  <div class="meta"><span class="art">art. I.4-74, I.4-75 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="bij gebeurtenis" data-hay="register van feiten van derden bij elke verklaring van een werknemer art. i.3-3 codex i">
+  <div class="doc-head"><h3>Register van feiten van derden</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij elke verklaring van een werknemer</div>
+  <div class="bew"><span class="lbl">Bewaren</span> 5 jaar vanaf de optekening</div>
+  <div class="meta"><span class="art">art. I.3-3 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%203%20Preventie%20van%20psychosociale%20risico%E2%80%99s%20op%20het%20werk.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="bij gebeurtenis" data-hay="register van verleende eerste hulp bij elke interventie art. i.5-6, §3 codex i">
+  <div class="doc-head"><h3>Register van verleende eerste hulp</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij elke interventie</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd in titel 5</div>
+  <div class="meta"><span class="art">art. I.5-6, §3 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%205%20Eerste%20hulp.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="bij gebeurtenis" data-hay="verzoek om gezondheidsbeoordeling vóór elk verplicht onderzoek art. i.4-10 codex i">
+  <div class="doc-head"><h3>Verzoek om gezondheidsbeoordeling</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór elk verplicht onderzoek</div>
+  
+  <div class="meta"><span class="art">art. I.4-10 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="I" data-soort="terugkerend" data-hay="vormingsattest en supervisiebewijs vertrouwenspersoon opleiding binnen 2 jaar na aanstelling; supervisie jaarlijks art. i.3-58, i.3-59, bijlage i.3-1 codex i">
+  <div class="doc-head"><h3>Vormingsattest en supervisiebewijs vertrouwenspersoon</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Opleiding binnen 2 jaar na aanstelling; supervisie jaarlijks</div>
+  
+  <div class="meta"><span class="art">art. I.3-58, I.3-59, bijlage I.3-1 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%203%20Preventie%20van%20psychosociale%20risico%E2%80%99s%20op%20het%20werk.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="II">Boek II — Organisatie van de preventie</h2>
+<article class="doc" data-boek="II" data-soort="bij gebeurtenis" data-hay="beleidsadvies externe dienst na elk bedrijfsbezoek en bij relevante gebeurtenissen bijgewerkt art. ii.3-16 §1, ii.3-56, ii.3-58 codex ii">
+  <div class="doc-head"><h3>Beleidsadvies externe dienst</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Na elk bedrijfsbezoek en bij relevante gebeurtenissen bijgewerkt</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd; overdracht binnen 3 maanden bij wissel dienst</div>
+  <div class="meta"><span class="art">art. II.3-16 §1, II.3-56, II.3-58 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%203%20EDPB.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="terugkerend" data-hay="documentatie interne dienst permanent bijhouden art. ii.1-6 §1 1° h), bijlage ii.1-1, ii.7-14 codex ii">
+  <div class="doc-head"><h3>Documentatie interne dienst</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Permanent bijhouden</div>
+  
+  <div class="meta"><span class="art">art. II.1-6 §1 1° h), bijlage II.1-1, II.7-14 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%201%20IDPB.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="bij gebeurtenis" data-hay="dossier gemeenschappelijke interne dienst bij oprichting; bij elke wijziging; bij ontbinding art. ii.2-4 t.e.m. ii.2-17 codex ii">
+  <div class="doc-head"><h3>Dossier gemeenschappelijke interne dienst</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij oprichting; bij elke wijziging; bij ontbinding</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Zolang de GIDPB bestaat (historiek van wijzigingen)</div>
+  <div class="meta"><span class="art">art. II.2-4 t.e.m. II.2-17 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%202%20GIDPB.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="terugkerend" data-hay="getuigschriften en bijscholingsattesten preventieadviseurs bij aanstelling; jaarlijks voor bijscholing art. ii.1-20, ii.1-21, ii.4-4, ii.4-22, ii.4-25, ii.4-29 codex ii">
+  <div class="doc-head"><h3>Getuigschriften en bijscholingsattesten preventieadviseurs</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bij aanstelling; jaarlijks voor bijscholing</div>
+  
+  <div class="meta"><span class="art">art. II.1-20, II.1-21, II.4-4, II.4-22, II.4-25, II.4-29 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%204%20Vorming%20en%20bijscholing%20van%20de%20preventieadviseurs.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="bij gebeurtenis" data-hay="keuringsverslag edtc na elke controle; volgende controle op de vermelde datum art. ii.5-10, ii.5-11 codex ii">
+  <div class="doc-head"><h3>Keuringsverslag EDTC</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Na elke controle; volgende controle op de vermelde datum</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd in titel 5</div>
+  <div class="meta"><span class="art">art. II.5-10, II.5-11 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%205%20EDTC.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="terugkerend" data-hay="maand- of driemaandverslag interne dienst maandelijks (groep a, b, c) of driemaandelijks (&lt; 50 werknemers, niet groep b); oproeping comité met maandverslag art. ii.1-6 §1 2° a), bijlage ii.1-2 codex ii">
+  <div class="doc-head"><h3>Maand- of driemaandverslag interne dienst</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Maandelijks (groep A, B, C) of driemaandelijks (&lt; 50 werknemers, niet groep B); oproeping Comité met maandverslag</div>
+  
+  <div class="meta"><span class="art">art. II.1-6 §1 2° a), bijlage II.1-2 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%201%20IDPB.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="bij gebeurtenis" data-hay="meetverslag erkend laboratorium na elke meting art. ii.6-12 §5, ii.6-13 §4 codex; art. vi.1-18, vi.1-55, vi.1-57, vi.3-18, vi.3-62; v.2-8, v.3-5, v.3-7, v.6-6, v.7-15 ii">
+  <div class="doc-head"><h3>Meetverslag erkend laboratorium</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Na elke meting</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd in titel 6 voor de werkgever</div>
+  <div class="meta"><span class="art">art. II.6-12 §5, II.6-13 §4 Codex; art. VI.1-18, VI.1-55, VI.1-57, VI.3-18, VI.3-62; V.2-8, V.3-5, V.3-7, V.6-6, V.7-15</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex_boek_2_titel_6_Laboratoria.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="bij gebeurtenis" data-hay="overeenkomst met de externe dienst vooraf aan het comité voorleggen; onbepaalde duur; opzegging min. 6 maanden tegen 31/12 art. ii.3-6 §2, ii.3-13 codex ii">
+  <div class="doc-head"><h3>Overeenkomst met de externe dienst</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vooraf aan het Comité voorleggen; onbepaalde duur; opzegging min. 6 maanden tegen 31/12</div>
+  
+  <div class="meta"><span class="art">art. II.3-6 §2, II.3-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%203%20EDPB.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="terugkerend" data-hay="register en communicatiemiddel rechtstreekse participatie permanent ter beschikking; reactietermijn werknemers 15 dagen art. ii.8-1, ii.8-2 codex ii">
+  <div class="doc-head"><h3>Register en communicatiemiddel rechtstreekse participatie</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Permanent ter beschikking; reactietermijn werknemers 15 dagen</div>
+  
+  <div class="meta"><span class="art">art. II.8-1, II.8-2 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%208%20Rechtstreekse%20participatie.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="II" data-soort="terugkerend" data-hay="verslag bedrijfsbezoek externe dienst verkennend bezoek binnen 6 of 12 maanden; periodiek om de 24 of 36 maanden art. ii.3-53 t.e.m. ii.3-55, ii.3-58 codex ii">
+  <div class="doc-head"><h3>Verslag bedrijfsbezoek externe dienst</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Verkennend bezoek binnen 6 of 12 maanden; periodiek om de 24 of 36 maanden</div>
+  
+  <div class="meta"><span class="art">art. II.3-53 t.e.m. II.3-55, II.3-58 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%203%20EDPB.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="III">Boek III — Arbeidsplaatsen</h2>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="actieplan binnenluchtkwaliteit op te stellen zodra lokalen niet voldoen aan de co2-/debietnorm van art. iii.1-34, §3; tijdspad met korte, middellange en lange termijn art. iii.1-34, §4 codex iii">
+  <div class="doc-head"><h3>Actieplan binnenluchtkwaliteit</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Op te stellen zodra lokalen niet voldoen aan de CO2-/debietnorm van art. III.1-34, §3; tijdspad met korte, middellange en lange termijn</div>
+  
+  <div class="meta"><span class="art">art. III.1-34, §4 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%201%20Basiseisen%20betreffende%20arbeidsplaatsen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="arbeidsvergunning voor gevaarlijke werkzaamheden in atex-zones (met schriftelijke instructies) vóór de aanvang van elke gevaarlijke werkzaamheid bijlage iii.4-2, deel a, 1.2 codex iii">
+  <div class="doc-head"><h3>Arbeidsvergunning voor gevaarlijke werkzaamheden in ATEX-zones (met schriftelijke instructies)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de aanvang van elke gevaarlijke werkzaamheid</div>
+  
+  <div class="meta"><span class="art">bijlage III.4-2, deel A, 1.2 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%204%20Ruimten%20met%20risico%E2%80%99s%20voor%20een%20explosieve%20atmosfeer.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="terugkerend" data-hay="brandpreventiedossier bijhouden en actueel houden art. iii.3-24 codex iii">
+  <div class="doc-head"><h3>Brandpreventiedossier</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden en actueel houden</div>
+  
+  <div class="meta"><span class="art">art. III.3-24 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%203%20Brandpreventie%20op%20de%20arbeidsplaatsen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="evacuatieplan (per niveau) bij inrichting en bij wijziging van de indeling art. iii.3-13 codex iii">
+  <div class="doc-head"><h3>Evacuatieplan (per niveau)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij inrichting en bij wijziging van de indeling</div>
+  
+  <div class="meta"><span class="art">art. III.3-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%203%20Brandpreventie%20op%20de%20arbeidsplaatsen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="explosieveiligheidsdocument (evd) vóór de aanvang van het werk; herzien bij belangrijke wijzigingen, uitbreidingen of verbouwingen art. iii.4-8 codex (ook iii.4-6, iii.4-9, bijlage iii.4-2) iii">
+  <div class="doc-head"><h3>Explosieveiligheidsdocument (EVD)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de aanvang van het werk; herzien bij belangrijke wijzigingen, uitbreidingen of verbouwingen</div>
+  
+  <div class="meta"><span class="art">art. III.4-8 Codex (ook III.4-6, III.4-9, bijlage III.4-2)</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%204%20Ruimten%20met%20risico%E2%80%99s%20voor%20een%20explosieve%20atmosfeer.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="terugkerend" data-hay="interventiedossier voor de hulpdiensten actueel houden art. iii.3-21 codex iii">
+  <div class="doc-head"><h3>Interventiedossier voor de hulpdiensten</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Actueel houden</div>
+  
+  <div class="meta"><span class="art">art. III.3-21 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%203%20Brandpreventie%20op%20de%20arbeidsplaatsen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="terugkerend" data-hay="keuringsverslagen elektrische installatie (gelijkvormigheidsonderzoek, eerste onderzoek, periodiek onderzoek) gelijkvormigheidsonderzoek bij ingebruikname; eerste onderzoek oude installaties uiterlijk 1/1/2014; periodiek volgens arei-frequentie art. iii.2-12 t.e.m. iii.2-16 codex; arei iii">
+  <div class="doc-head"><h3>Keuringsverslagen elektrische installatie (gelijkvormigheidsonderzoek, eerste onderzoek, periodiek onderzoek)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Gelijkvormigheidsonderzoek bij ingebruikname; eerste onderzoek oude installaties uiterlijk 1/1/2014; periodiek volgens AREI-frequentie</div>
+  <div class="bew"><span class="lbl">Bewaren</span> In het installatiedossier: eerste/gelijkvormigheidsverslag + voorlaatste en laatste periodieke verslag</div>
+  <div class="meta"><span class="art">art. III.2-12 t.e.m. III.2-16 Codex; AREI</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%202%20Elektrische%20installaties.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="lijst beschermingsmiddelen tegen brand met situering op plan bij wijziging art. iii.3-24, 7° codex iii">
+  <div class="doc-head"><h3>Lijst beschermingsmiddelen tegen brand met situering op plan</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij wijziging</div>
+  
+  <div class="meta"><span class="art">art. III.3-24, 7° Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%203%20Brandpreventie%20op%20de%20arbeidsplaatsen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="lijst van werknemers met bekwaamheid ba4/ba5 bij toekenning of intrekking van een bekwaamheid art. iii.2-18 en bijlage iii.2-2, 6° codex; arei hfdst. 9.2 iii">
+  <div class="doc-head"><h3>Lijst van werknemers met bekwaamheid BA4/BA5</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij toekenning of intrekking van een bekwaamheid</div>
+  
+  <div class="meta"><span class="art">art. III.2-18 en bijlage III.2-2, 6° Codex; AREI hfdst. 9.2</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%202%20Elektrische%20installaties.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="procedure voor werken en herstellingen aan reservoirs ontvlambare vloeistoffen vóór de werken art. iii.5-59 codex iii">
+  <div class="doc-head"><h3>Procedure voor werken en herstellingen aan reservoirs ontvlambare vloeistoffen</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de werken</div>
+  
+  <div class="meta"><span class="art">art. III.5-59 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%205%20Opslagplaatsen%20voor%20ontvlambare%20vloeistoffen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="terugkerend" data-hay="risicoanalyse brand (document met resultaten en maatregelen) regelmatig bijwerken en bij elke wijziging die het brandrisico beïnvloedt art. iii.3-3 t.e.m. iii.3-5 codex iii">
+  <div class="doc-head"><h3>Risicoanalyse brand (document met resultaten en maatregelen)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Regelmatig bijwerken en bij elke wijziging die het brandrisico beïnvloedt</div>
+  
+  <div class="meta"><span class="art">art. III.3-3 t.e.m. III.3-5 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%203%20Brandpreventie%20op%20de%20arbeidsplaatsen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="schriftelijke brandprocedures (intern noodplan brand) bij opmaak en wijziging art. iii.3-23 codex iii">
+  <div class="doc-head"><h3>Schriftelijke brandprocedures (intern noodplan brand)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij opmaak en wijziging</div>
+  
+  <div class="meta"><span class="art">art. III.3-23 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%203%20Brandpreventie%20op%20de%20arbeidsplaatsen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="schriftelijke machtiging voor het betreden van ondergrondse reservoirs en tanks vóór elk betreden art. iii.5-58 codex iii">
+  <div class="doc-head"><h3>Schriftelijke machtiging voor het betreden van ondergrondse reservoirs en tanks</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór elk betreden</div>
+  
+  <div class="meta"><span class="art">art. III.5-58 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%205%20Opslagplaatsen%20voor%20ontvlambare%20vloeistoffen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="bij gebeurtenis" data-hay="schriftelijke toestemming voor werken met bijkomend brandrisico (vuurvergunning) vóór de aanvang van elke werkzaamheid met bijkomend brandrisico art. iii.3-28, iii.3-29, iii.5-48 codex iii">
+  <div class="doc-head"><h3>Schriftelijke toestemming voor werken met bijkomend brandrisico (vuurvergunning)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de aanvang van elke werkzaamheid met bijkomend brandrisico</div>
+  
+  <div class="meta"><span class="art">art. III.3-28, III.3-29, III.5-48 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%203%20Brandpreventie%20op%20de%20arbeidsplaatsen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="III" data-soort="terugkerend" data-hay="verslagen beproeving en dichtheidsonderzoek reservoirs ontvlambare vloeistoffen bij ingebruikname (beproeving volgens ontwerpcode) en periodiek (dichtheidsproef); niet-conforme bestaande reservoirs max. om de 5 jaar art. iii.5-22, iii.5-45, iii.5-66 codex iii">
+  <div class="doc-head"><h3>Verslagen beproeving en dichtheidsonderzoek reservoirs ontvlambare vloeistoffen</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bij ingebruikname (beproeving volgens ontwerpcode) en periodiek (dichtheidsproef); niet-conforme bestaande reservoirs max. om de 5 jaar</div>
+  
+  <div class="meta"><span class="art">art. III.5-22, III.5-45, III.5-66 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%205%20Opslagplaatsen%20voor%20ontvlambare%20vloeistoffen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="IV">Boek IV — Arbeidsmiddelen</h2>
+<article class="doc" data-boek="IV" data-soort="bij gebeurtenis" data-hay="attest van de leverancier (conformiteit met de bestelling) bij levering art. iv.2-7, iv.2-10 en iv.2-11 codex iv">
+  <div class="doc-head"><h3>Attest van de leverancier (conformiteit met de bestelling)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij levering</div>
+  
+  <div class="meta"><span class="art">art. IV.2-7, IV.2-10 en IV.2-11 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%202%20Bepalingen%20van%20toepassing%20op%20alle%20arbeidsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IV" data-soort="bij gebeurtenis" data-hay="bestelbon / lastenkohier met veiligheidsclausule bij elke bestelling van installaties, machines en gemechaniseerde werktuigen art. iv.2-6 en iv.2-11 codex iv">
+  <div class="doc-head"><h3>Bestelbon / lastenkohier met veiligheidsclausule</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij elke bestelling van installaties, machines en gemechaniseerde werktuigen</div>
+  
+  <div class="meta"><span class="art">art. IV.2-6 en IV.2-11 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%202%20Bepalingen%20van%20toepassing%20op%20alle%20arbeidsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IV" data-soort="bij gebeurtenis" data-hay="indienststellingsverslag arbeidsmiddel vóór elke indienststelling; inhaalverslag voor middelen in gebruik op 25/7/1975 zonder gelijkaardig verslag art. iv.2-8, iv.2-9, iv.2-10 en iv.2-11 codex iv">
+  <div class="doc-head"><h3>Indienststellingsverslag arbeidsmiddel</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór elke indienststelling; inhaalverslag voor middelen in gebruik op 25/7/1975 zonder gelijkaardig verslag</div>
+  
+  <div class="meta"><span class="art">art. IV.2-8, IV.2-9, IV.2-10 en IV.2-11 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%202%20Bepalingen%20van%20toepassing%20op%20alle%20arbeidsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IV" data-soort="bij gebeurtenis" data-hay="instructienota gebruik steiger vóór gebruik; bezorgen aan de gebruikende werkgever art. iv.5-10 en iv.5-15 codex iv">
+  <div class="doc-head"><h3>Instructienota gebruik steiger</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór gebruik; bezorgen aan de gebruikende werkgever</div>
+  
+  <div class="meta"><span class="art">art. IV.5-10 en IV.5-15 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%205%20Arbeidsmiddelen%20voor%20tijdelijke%20werkzaamheden%20op%20hoogte.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IV" data-soort="bij gebeurtenis" data-hay="montage-, demontage- en ombouwschema steiger vóór montage; aanpassen bij wijziging; beschikbaar tijdens de hele duur van de werken art. iv.5-7, 2e lid, iv.5-9 en iv.5-15 codex iv">
+  <div class="doc-head"><h3>Montage-, demontage- en ombouwschema steiger</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór montage; aanpassen bij wijziging; beschikbaar tijdens de hele duur van de werken</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Duur van de werken</div>
+  <div class="meta"><span class="art">art. IV.5-7, 2e lid, IV.5-9 en IV.5-15 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%205%20Arbeidsmiddelen%20voor%20tijdelijke%20werkzaamheden%20op%20hoogte.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IV" data-soort="terugkerend" data-hay="onderhoudsboekje arbeidsmiddel consequent bijhouden bijlage iv.2-2, pt. 3.13 en art. iv.2-13 codex iv">
+  <div class="doc-head"><h3>Onderhoudsboekje arbeidsmiddel</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Consequent bijhouden</div>
+  
+  <div class="meta"><span class="art">bijlage IV.2-2, pt. 3.13 en art. IV.2-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%202%20Bepalingen%20van%20toepassing%20op%20alle%20arbeidsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IV" data-soort="bij gebeurtenis" data-hay="schriftelijke instructies arbeidsmiddelen (werking, gebruik, inspectie, onderhoud) vóór gebruik; bijwerken bij wijziging of nieuwe gebruikservaring art. iv.2-5, 3e en 4e lid codex iv">
+  <div class="doc-head"><h3>Schriftelijke instructies arbeidsmiddelen (werking, gebruik, inspectie, onderhoud)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór gebruik; bijwerken bij wijziging of nieuwe gebruikservaring</div>
+  
+  <div class="meta"><span class="art">art. IV.2-5, 3e en 4e lid Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%202%20Bepalingen%20van%20toepassing%20op%20alle%20arbeidsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IV" data-soort="bij gebeurtenis" data-hay="sterkte- en stabiliteitsberekening steiger vóór montage; bezorgen aan de gebruikende werkgever art. iv.5-8 en iv.5-13 codex iv">
+  <div class="doc-head"><h3>Sterkte- en stabiliteitsberekening steiger</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór montage; bezorgen aan de gebruikende werkgever</div>
+  
+  <div class="meta"><span class="art">art. IV.5-8 en IV.5-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%205%20Arbeidsmiddelen%20voor%20tijdelijke%20werkzaamheden%20op%20hoogte.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="V">Boek V — Omgevingsfactoren en fysische agentia</h2>
+<article class="doc" data-boek="V" data-soort="melding/deadline" data-hay="aangifte voortgezet / uitzonderlijk gezondheidstoezicht ioniserende straling onverwijld art. v.5-19, bijlage v.5-1 (1) en (2) codex v">
+  <div class="doc-head"><h3>Aangifte voortgezet / uitzonderlijk gezondheidstoezicht ioniserende straling</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Onverwijld</div>
+  
+  <div class="meta"><span class="art">art. V.5-19, bijlage V.5-1 (1) en (2) Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%205%20Ioniserende%20stralingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="aanvraag afwijking (boek v) bij aanvraag; nieuwe aanvraag minstens 1 maand vóór verval van de toelating art. v.2-30, v.3-27, v.7-38 codex v">
+  <div class="doc-head"><h3>Aanvraag afwijking (Boek V)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij aanvraag; nieuwe aanvraag minstens 1 maand vóór verval van de toelating</div>
+  
+  <div class="meta"><span class="art">art. V.2-30, V.3-27, V.7-38 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%202%20Lawaai.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="actieplan elektromagnetische velden opstellen en uitvoeren bij overschrijding relevante an, voor werknemers met verhoogd risico en indirecte effecten art. v.7-20, v.7-21 codex v">
+  <div class="doc-head"><h3>Actieplan elektromagnetische velden</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Opstellen en uitvoeren bij overschrijding relevante AN, voor werknemers met verhoogd risico en indirecte effecten</div>
+  
+  <div class="meta"><span class="art">art. V.7-20, V.7-21 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%207%20Elektromagnetische%20velden.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="actieplan kunstmatige optische straling opstellen en uitvoeren als grenswaarden kunnen worden overschreden art. v.6-10 codex v">
+  <div class="doc-head"><h3>Actieplan kunstmatige optische straling</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Opstellen en uitvoeren als grenswaarden kunnen worden overschreden</div>
+  
+  <div class="meta"><span class="art">art. V.6-10 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%206%20Kunstmatige%20optische%20straling.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="basishandleiding hyperbare werkzaamheden aanpassen aan risicoanalyse en bijsturen bij incidenten art. v.4-6, v.4-7 codex v">
+  <div class="doc-head"><h3>Basishandleiding hyperbare werkzaamheden</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Aanpassen aan risicoanalyse en bijsturen bij incidenten</div>
+  
+  <div class="meta"><span class="art">art. V.4-6, V.4-7 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%204%20Werkzaamheden%20in%20een%20hyperbare%20omgeving.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="terugkerend" data-hay="gedocumenteerde risico-evaluatie lawaai regelmatig bijwerken; zeker bij ingrijpende wijzigingen of als gezondheidstoezicht dat vraagt art. v.2-6, v.2-9, v.2-12 codex v">
+  <div class="doc-head"><h3>Gedocumenteerde risico-evaluatie lawaai</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Regelmatig bijwerken; zeker bij ingrijpende wijzigingen of als gezondheidstoezicht dat vraagt</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Gegevens bewaren zodat latere raadpleging mogelijk is (geen termijn)</div>
+  <div class="meta"><span class="art">art. V.2-6, V.2-9, V.2-12 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%202%20Lawaai.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="gedocumenteerde risicobeoordeling trillingen bijwerken bij ingrijpende wijzigingen of op basis van gezondheidstoezicht art. v.3-8, v.3-10 codex v">
+  <div class="doc-head"><h3>Gedocumenteerde risicobeoordeling trillingen</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bijwerken bij ingrijpende wijzigingen of op basis van gezondheidstoezicht</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Resultaten bewaren zodat latere raadpleging mogelijk is (geen termijn)</div>
+  <div class="meta"><span class="art">art. V.3-8, V.3-10 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%203%20Trillingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="terugkerend" data-hay="geschreven risicoanalyse elektromagnetische velden regelmatig bijwerken, bij ingrijpende wijzigingen of op basis van gezondheidstoezicht art. v.7-13 t.e.m. v.7-19, v.7-26 codex v">
+  <div class="doc-head"><h3>Geschreven risicoanalyse elektromagnetische velden</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Regelmatig bijwerken, bij ingrijpende wijzigingen of op basis van gezondheidstoezicht</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Meetgegevens en gewijzigde maatregelen traceerbaar bewaren (geen termijn)</div>
+  <div class="meta"><span class="art">art. V.7-13 t.e.m. V.7-19, V.7-26 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%207%20Elektromagnetische%20velden.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="terugkerend" data-hay="geschreven risicoanalyse kunstmatige optische straling regelmatig bijwerken, zeker na ingrijpende wijzigingen of op basis van gezondheidstoezicht art. v.6-5 t.e.m. v.6-9 codex v">
+  <div class="doc-head"><h3>Geschreven risicoanalyse kunstmatige optische straling</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Regelmatig bijwerken, zeker na ingrijpende wijzigingen of op basis van gezondheidstoezicht</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Resultaten bewaren zodat latere raadpleging mogelijk is (geen termijn)</div>
+  <div class="meta"><span class="art">art. V.6-5 t.e.m. V.6-9 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%206%20Kunstmatige%20optische%20straling.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="getuigschrift beroepsbekwaamheid en geschiktheidsattest duiker vóór het duiken art. v.4-24 codex v">
+  <div class="doc-head"><h3>Getuigschrift beroepsbekwaamheid en geschiktheidsattest duiker</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór het duiken</div>
+  
+  <div class="meta"><span class="art">art. V.4-24 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%204%20Werkzaamheden%20in%20een%20hyperbare%20omgeving.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="terugkerend" data-hay="gezondheidsdossier aanleggen bij gezondheidstoezicht; bijhouden art. vi.1-40, vi.1-41, vi.2-14 4°, vi.2-15, vi.3-35, vii.1-49 codex (en boek i titel 4, hoofdstuk vii); art. v.2-23, v.3-22, v.5-3, v.6-20, v.7-33 v">
+  <div class="doc-head"><h3>Gezondheidsdossier</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Aanleggen bij gezondheidstoezicht; bijhouden</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Volgens I.4-88 t.e.m. I.4-91; CMR en asbest: 40 jaar na einde blootstelling; biologische agentia met latente gevolgen (VII.1-11): 30 jaar</div>
+  <div class="meta"><span class="art">art. VI.1-40, VI.1-41, VI.2-14 4°, VI.2-15, VI.3-35, VII.1-49 Codex (en Boek I titel 4, hoofdstuk VII); art. V.2-23, V.3-22, V.5-3, V.6-20, V.7-33</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%201%20Chemische%20agentia.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="terugkerend" data-hay="jaarlijkse globale anonieme dosisanalyse jaarlijks art. v.5-8, 2° codex v">
+  <div class="doc-head"><h3>Jaarlijkse globale anonieme dosisanalyse</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Jaarlijks</div>
+  
+  <div class="meta"><span class="art">art. V.5-8, 2° Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%205%20Ioniserende%20stralingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="programma technische en organisatorische maatregelen thermische omgevingsfactoren vóór de blootstelling; bijwerken bij gewijzigde omstandigheden; toepassen zodra actiewaarden overschreden art. v.1-4 codex v">
+  <div class="doc-head"><h3>Programma technische en organisatorische maatregelen thermische omgevingsfactoren</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de blootstelling; bijwerken bij gewijzigde omstandigheden; toepassen zodra actiewaarden overschreden</div>
+  
+  <div class="meta"><span class="art">art. V.1-4 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%201%20Thermische%20omgevingsfactoren.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="programma technische en organisatorische maatregelen trillingen opstellen en uitvoeren bij overschrijding van een actiewaarde art. v.3-12 codex v">
+  <div class="doc-head"><h3>Programma technische en organisatorische maatregelen trillingen</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Opstellen en uitvoeren bij overschrijding van een actiewaarde</div>
+  
+  <div class="meta"><span class="art">art. V.3-12 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%203%20Trillingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="programma technische en/of organisatorische maatregelen lawaai opstellen en uitvoeren bij overschrijding bovenste actiewaarde art. v.2-14 codex v">
+  <div class="doc-head"><h3>Programma technische en/of organisatorische maatregelen lawaai</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Opstellen en uitvoeren bij overschrijding bovenste actiewaarde</div>
+  
+  <div class="meta"><span class="art">art. V.2-14 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%202%20Lawaai.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="terugkerend" data-hay="register hyperbare werkzaamheden per werkzaamheid bijhouden; blijft op de werf art. v.4-9, v.4-12, v.4-23, v.4-29 t.e.m. v.4-31 codex v">
+  <div class="doc-head"><h3>Register hyperbare werkzaamheden</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Per werkzaamheid bijhouden; blijft op de werf</div>
+  <div class="bew"><span class="lbl">Bewaren</span> 20 jaar</div>
+  <div class="meta"><span class="art">art. V.4-9, V.4-12, V.4-23, V.4-29 t.e.m. V.4-31 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%204%20Werkzaamheden%20in%20een%20hyperbare%20omgeving.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="register ontsmettingen bij elke ontsmetting onder zijn toezicht art. v.5-16 codex v">
+  <div class="doc-head"><h3>Register ontsmettingen</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij elke ontsmetting onder zijn toezicht</div>
+  
+  <div class="meta"><span class="art">art. V.5-16 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%205%20Ioniserende%20stralingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="risicoanalysedocument hyperbare werkzaamheden per werkzaamheid art. v.4-3, v.4-4, v.4-8 codex v">
+  <div class="doc-head"><h3>Risicoanalysedocument hyperbare werkzaamheden</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Per werkzaamheid</div>
+  
+  <div class="meta"><span class="art">art. V.4-3, V.4-4, V.4-8 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%204%20Werkzaamheden%20in%20een%20hyperbare%20omgeving.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="werkboekje hyperbare werkzaamheden aanvullen na elke werkzaamheid; ondertekend art. v.4-9 t.e.m. v.4-11 codex v">
+  <div class="doc-head"><h3>Werkboekje hyperbare werkzaamheden</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Aanvullen na elke werkzaamheid; ondertekend</div>
+  
+  <div class="meta"><span class="art">art. V.4-9 t.e.m. V.4-11 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%204%20Werkzaamheden%20in%20een%20hyperbare%20omgeving.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="V" data-soort="bij gebeurtenis" data-hay="werkplan persluchtcaisson vóór de werken; opgenomen in het register art. v.4-28 codex v">
+  <div class="doc-head"><h3>Werkplan persluchtcaisson</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de werken; opgenomen in het register</div>
+  
+  <div class="meta"><span class="art">art. V.4-28 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20V%20titel%204%20Werkzaamheden%20in%20een%20hyperbare%20omgeving.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="VI">Boek VI — Chemische, kankerverwekkende en biologische agentia</h2>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="aanvraag afwijking verboden agentia vóór het gebruik waarvoor afwijking nodig is art. vi.1-30, vi.1-31 codex vi">
+  <div class="doc-head"><h3>Aanvraag afwijking verboden agentia</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór het gebruik waarvoor afwijking nodig is</div>
+  
+  <div class="meta"><span class="art">art. VI.1-30, VI.1-31 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%201%20Chemische%20agentia.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="asbestinventaris jaarlijks bijwerken en na elke wijziging, verwijdering, inkapseling of nieuwe vondst; vóór sloop of verwijdering uitbreiden art. vi.3-4 t.e.m. vi.3-9 codex vi">
+  <div class="doc-head"><h3>Asbestinventaris</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Jaarlijks bijwerken en na elke wijziging, verwijdering, inkapseling of nieuwe vondst; vóór sloop of verwijdering uitbreiden</div>
+  
+  <div class="meta"><span class="art">art. VI.3-4 t.e.m. VI.3-9 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="beheersprogramma asbest regelmatig bijwerken; minstens jaarlijkse visuele beoordeling art. vi.3-11, vi.3-12 codex vi">
+  <div class="doc-head"><h3>Beheersprogramma asbest</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Regelmatig bijwerken; minstens jaarlijkse visuele beoordeling</div>
+  
+  <div class="meta"><span class="art">art. VI.3-11, VI.3-12 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="melding/deadline" data-hay="erkenningsdossier asbestverwijderaar eerste erkenning 2 jaar; hernieuwing aanvragen uiterlijk 6 maanden vóór vervaldatum (max. 5 jaar); wijzigingen onverwijld melden art. vi.4-5, vi.4-6, vi.4-11 t.e.m. vi.4-14 codex vi">
+  <div class="doc-head"><h3>Erkenningsdossier asbestverwijderaar</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Eerste erkenning 2 jaar; hernieuwing aanvragen uiterlijk 6 maanden vóór vervaldatum (max. 5 jaar); wijzigingen onverwijld melden</div>
+  
+  <div class="meta"><span class="art">art. VI.4-5, VI.4-6, VI.4-11 t.e.m. VI.4-14 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex_boek_VI_titel_4_Specifieke_bepalingen_voor_asbestverwijderaars.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="gemotiveerd voorstel grenswaarde bij afwijkend werkpatroon bij afwijkend werkpatroon art. vi.1-45 codex vi">
+  <div class="doc-head"><h3>Gemotiveerd voorstel grenswaarde bij afwijkend werkpatroon</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij afwijkend werkpatroon</div>
+  
+  <div class="meta"><span class="art">art. VI.1-45 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%201%20Chemische%20agentia.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="individuele nota cmr-agentia bij aanvang en telkens na maximaal één jaar zolang de werknemer in risicozones werkt art. vi.2-12, §1 codex vi">
+  <div class="doc-head"><h3>Individuele nota CMR-agentia</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij aanvang en telkens na maximaal één jaar zolang de werknemer in risicozones werkt</div>
+  
+  <div class="meta"><span class="art">art. VI.2-12, §1 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex_Boek6_Titel2.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="informatiedocument asbestwerken vóór elke werkzaamheid art. vi.3-36, vi.3-49 codex vi">
+  <div class="doc-head"><h3>Informatiedocument asbestwerken</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór elke werkzaamheid</div>
+  
+  <div class="meta"><span class="art">art. VI.3-36, VI.3-49 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="informatiedocument noodmaatregelen chemische agentia opstellen als deel van het noodplan; bijwerken bij wijziging art. vi.1-26 codex vi">
+  <div class="doc-head"><h3>Informatiedocument noodmaatregelen chemische agentia</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Opstellen als deel van het noodplan; bijwerken bij wijziging</div>
+  
+  <div class="meta"><span class="art">art. VI.1-26 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%201%20Chemische%20agentia.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="kwaliteitsborgingssysteem en technisch referentieel asbestverwijdering bijhouden; gecertificeerd door geaccrediteerde certificatie-instelling art. vi.4-4 2° en 3°, bijlagen vi.4-1 en vi.4-2 codex vi">
+  <div class="doc-head"><h3>Kwaliteitsborgingssysteem en technisch referentieel asbestverwijdering</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden; gecertificeerd door geaccrediteerde certificatie-instelling</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Werfdocumenten minstens 3 jaar op de hoofdzetel</div>
+  <div class="meta"><span class="art">art. VI.4-4 2° en 3°, bijlagen VI.4-1 en VI.4-2 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex_boek_VI_titel_4_Specifieke_bepalingen_voor_asbestverwijderaars.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="meetprogramma en meetverslagen asbest vóór de werken; per werkfase; dagelijks bij hermetische zone of couveusezak; maandelijks/driemaandelijks bij vi.3-26 art. vi.3-17 t.e.m. vi.3-26, vi.3-48, vi.3-59, vi.3-62 codex vi">
+  <div class="doc-head"><h3>Meetprogramma en meetverslagen asbest</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Vóór de werken; per werkfase; dagelijks bij hermetische zone of couveusezak; maandelijks/driemaandelijks bij VI.3-26</div>
+  
+  <div class="meta"><span class="art">art. VI.3-17 t.e.m. VI.3-26, VI.3-48, VI.3-59, VI.3-62 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="meetverslag blootstelling chemische agentia na elke meetcampagne; frequentie volgens nbn en 689 en in overleg met comité art. vi.1-18, vi.1-27 5°, vi.1-48, vi.1-54, vi.1-57, bijlage vi.1-1 d codex vi">
+  <div class="doc-head"><h3>Meetverslag blootstelling chemische agentia</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Na elke meetcampagne; frequentie volgens NBN EN 689 en in overleg met Comité</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Monsternemingsgegevens minstens 5 jaar (VI.1-54)</div>
+  <div class="meta"><span class="art">art. VI.1-18, VI.1-27 5°, VI.1-48, VI.1-54, VI.1-57, bijlage VI.1-1 D Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%201%20Chemische%20agentia.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="melding asbestwerken vóór aanvang; sloop/verwijdering uiterlijk 15 kalenderdagen vooraf; jaarlijks voor inventarisatie, metingen, analyses en afvalontvangst art. vi.3-27, vi.3-28 codex vi">
+  <div class="doc-head"><h3>Melding asbestwerken</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Vóór aanvang; sloop/verwijdering uiterlijk 15 kalenderdagen vooraf; jaarlijks voor inventarisatie, metingen, analyses en afvalontvangst</div>
+  
+  <div class="meta"><span class="art">art. VI.3-27, VI.3-28 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="melding/deadline" data-hay="melding voor opname op de lijst eenvoudige handelingen asbest vóór werken met eenvoudige handelingen; validering werkmethodes binnen 2 jaar art. vi.4-20, vi.4-21, vi.4-22, vi.4-23 codex vi">
+  <div class="doc-head"><h3>Melding voor opname op de lijst eenvoudige handelingen asbest</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Vóór werken met eenvoudige handelingen; validering werkmethodes binnen 2 jaar</div>
+  
+  <div class="meta"><span class="art">art. VI.4-20, VI.4-21, VI.4-22, VI.4-23 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex_boek_VI_titel_4_Specifieke_bepalingen_voor_asbestverwijderaars.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="opleidingsbewijzen asbest na elke opleiding en jaarlijkse bijscholing art. vi.3-37 §4, vi.3-67, vi.3-69 codex vi">
+  <div class="doc-head"><h3>Opleidingsbewijzen asbest</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Na elke opleiding en jaarlijkse bijscholing</div>
+  
+  <div class="meta"><span class="art">art. VI.3-37 §4, VI.3-67, VI.3-69 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="register blootgestelde werknemers asbest bijhouden op de arbeidsplaats art. vi.3-29 t.e.m. vi.3-31 codex vi">
+  <div class="doc-head"><h3>Register blootgestelde werknemers asbest</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden op de arbeidsplaats</div>
+  <div class="bew"><span class="lbl">Bewaren</span> 40 jaar na einde blootstelling in de hoofdzetel van de medische dienst; stopzetting 3 maanden vooraf melden aan AD TWW</div>
+  <div class="meta"><span class="art">art. VI.3-29 t.e.m. VI.3-31 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="register blootgestelde werknemers cmr bijhouden zolang er blootstelling is art. vi.2-12, §3 codex vi">
+  <div class="doc-head"><h3>Register blootgestelde werknemers CMR</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden zolang er blootstelling is</div>
+  <div class="bew"><span class="lbl">Bewaren</span> 40 jaar na einde blootstelling, door de dienst die het medisch toezicht verzorgt</div>
+  <div class="meta"><span class="art">art. VI.2-12, §3 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex_Boek6_Titel2.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="register productie/gebruik gevaarlijke stoffen bijhouden zolang de productie of het gebruik duurt art. vi.1-36 codex vi">
+  <div class="doc-head"><h3>Register productie/gebruik gevaarlijke stoffen</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden zolang de productie of het gebruik duurt</div>
+  
+  <div class="meta"><span class="art">art. VI.1-36 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%201%20Chemische%20agentia.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="risicoanalyse asbestwerken vóór werken met mogelijke blootstelling art. vi.3-15, vi.3-16 codex vi">
+  <div class="doc-head"><h3>Risicoanalyse asbestwerken</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór werken met mogelijke blootstelling</div>
+  
+  <div class="meta"><span class="art">art. VI.3-15, VI.3-16 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="risicoanalyse chemische agentia vóór nieuwe werkzaamheden; bijwerken bij belangrijke veranderingen of op basis van resultaten gezondheidstoezicht art. vi.1-6 t.e.m. vi.1-10, vi.1-14, vi.1-27, 1° codex vi">
+  <div class="doc-head"><h3>Risicoanalyse chemische agentia</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór nieuwe werkzaamheden; bijwerken bij belangrijke veranderingen of op basis van resultaten gezondheidstoezicht</div>
+  
+  <div class="meta"><span class="art">art. VI.1-6 t.e.m. VI.1-10, VI.1-14, VI.1-27, 1° Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%201%20Chemische%20agentia.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="risicoanalyse kankerverwekkende, mutagene, reprotoxische en hormoonontregelende agentia minstens jaarlijks en bij elke wijziging die de blootstelling kan beïnvloeden art. vi.2-1, vi.2-3, vi.2-4, vi.2-11 codex vi">
+  <div class="doc-head"><h3>Risicoanalyse kankerverwekkende, mutagene, reprotoxische en hormoonontregelende agentia</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Minstens jaarlijks en bij elke wijziging die de blootstelling kan beïnvloeden</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd; verslagen ter beschikking van toezicht</div>
+  <div class="meta"><span class="art">art. VI.2-1, VI.2-3, VI.2-4, VI.2-11 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex_Boek6_Titel2.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="terugkerend" data-hay="werfregister asbestverwijdering bijhouden tijdens de werken art. vi.3-65, bijlage vi.3-4 punt 2 codex; bijlage vi.4-2, 2.3.27 vi">
+  <div class="doc-head"><h3>Werfregister asbestverwijdering</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden tijdens de werken</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Op de werf; daarna minstens 3 jaar op de hoofdzetel (bijlage VI.4-2)</div>
+  <div class="meta"><span class="art">art. VI.3-65, bijlage VI.3-4 punt 2 Codex; bijlage VI.4-2, 2.3.27</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VI" data-soort="bij gebeurtenis" data-hay="werkplan asbest vóór aanvang; aanvulling bij afwijkingen art. vi.3-38 §2, vi.3-43, vi.3-51, vi.3-53, vi.3-60, vi.3-61, vi.3-64 codex; bijlage vi.4-2 vi">
+  <div class="doc-head"><h3>Werkplan asbest</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór aanvang; aanvulling bij afwijkingen</div>
+  
+  <div class="meta"><span class="art">art. VI.3-38 §2, VI.3-43, VI.3-51, VI.3-53, VI.3-60, VI.3-61, VI.3-64 Codex; bijlage VI.4-2</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VI%20titel%203%20Asbest.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="VII">Boek VII — Biologische agentia</h2>
+<article class="doc" data-boek="VII" data-soort="bij gebeurtenis" data-hay="actieplannen ongevallen met biologische agentia opstellen wanneer risico vastgesteld art. vii.1-16, 8° codex vii">
+  <div class="doc-head"><h3>Actieplannen ongevallen met biologische agentia</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Opstellen wanneer risico vastgesteld</div>
+  
+  <div class="meta"><span class="art">art. VII.1-16, 8° Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="bij gebeurtenis" data-hay="formulieren verzoek om en bewijs van inenting of tuberculinetest bij elke inenting of test art. vii.1-57, vii.1-62 codex vii">
+  <div class="doc-head"><h3>Formulieren verzoek om en bewijs van inenting of tuberculinetest</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij elke inenting of test</div>
+  
+  <div class="meta"><span class="art">art. VII.1-57, VII.1-62 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="bij gebeurtenis" data-hay="herinentingsstrategie hepatitis b per onderneming opstellen; bijwerken volgens controleresultaten art. vii.1-73 codex vii">
+  <div class="doc-head"><h3>Herinentingsstrategie hepatitis B</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Per onderneming opstellen; bijwerken volgens controleresultaten</div>
+  
+  <div class="meta"><span class="art">art. VII.1-73 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="bij gebeurtenis" data-hay="inentings- of tuberculinetestkaart na elke inenting of test art. vii.1-55, vii.1-63 codex vii">
+  <div class="doc-head"><h3>Inentings- of tuberculinetestkaart</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Na elke inenting of test</div>
+  <div class="bew"><span class="lbl">Bewaren</span> De laatste drie kaarten per werknemer, bij de formulieren gezondheidsbeoordeling</div>
+  <div class="meta"><span class="art">art. VII.1-55, VII.1-63 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="bij gebeurtenis" data-hay="kennisgeving gebruik biologische agentia minstens 30 dagen vóór eerste gebruik groep 2, 3 of 4; vooraf voor elk volgend groep 4-agens; opnieuw bij wezenlijke wijziging art. vii.1-77 t.e.m. vii.1-81 codex vii">
+  <div class="doc-head"><h3>Kennisgeving gebruik biologische agentia</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Minstens 30 dagen vóór eerste gebruik groep 2, 3 of 4; vooraf voor elk volgend groep 4-agens; opnieuw bij wezenlijke wijziging</div>
+  
+  <div class="meta"><span class="art">art. VII.1-77 t.e.m. VII.1-81 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="terugkerend" data-hay="naamlijst werknemers blootgesteld aan biologische agentia groep 3 of 4 bijhouden op de arbeidsplaats art. vii.1-10 t.e.m. vii.1-13 codex vii">
+  <div class="doc-head"><h3>Naamlijst werknemers blootgesteld aan biologische agentia groep 3 of 4</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden op de arbeidsplaats</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Minstens 10 jaar na einde blootstelling; 30 jaar bij agentia met latente of langdurige gevolgen; in de hoofdzetel van de medische dienst</div>
+  <div class="meta"><span class="art">art. VII.1-10 t.e.m. VII.1-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="terugkerend" data-hay="procedures en richtsnoeren scherpe medische instrumenten vaststellen en regelmatig herbeoordelen art. vii.1-26 §2, vii.1-28, vii.1-29 codex vii">
+  <div class="doc-head"><h3>Procedures en richtsnoeren scherpe medische instrumenten</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Vaststellen en regelmatig herbeoordelen</div>
+  
+  <div class="meta"><span class="art">art. VII.1-26 §2, VII.1-28, VII.1-29 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="bij gebeurtenis" data-hay="procedures ontsmetting, besmet afval en monsters vastleggen vóór de werkzaamheden art. vii.1-19, vii.1-33 3° codex vii">
+  <div class="doc-head"><h3>Procedures ontsmetting, besmet afval en monsters</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vastleggen vóór de werkzaamheden</div>
+  
+  <div class="meta"><span class="art">art. VII.1-19, VII.1-33 3° Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="terugkerend" data-hay="risicoanalyse biologische agentia periodiciteit volgens resultaten; herhalen bij wijzigingen en bij infectie van een werknemer; voedingswaren: minstens om de 5 jaar (resultaten binnen 2 maanden aan comité) art. vii.1-4 t.e.m. vii.1-9, vii.1-26 §1, vii.1-32, vii.1-75 codex vii">
+  <div class="doc-head"><h3>Risicoanalyse biologische agentia</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Periodiciteit volgens resultaten; herhalen bij wijzigingen en bij infectie van een werknemer; voedingswaren: minstens om de 5 jaar (resultaten binnen 2 maanden aan Comité)</div>
+  
+  <div class="meta"><span class="art">art. VII.1-4 t.e.m. VII.1-9, VII.1-26 §1, VII.1-32, VII.1-75 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="VII" data-soort="bij gebeurtenis" data-hay="schriftelijke instructies biologische agentia beschikbaar op de werkplek art. vii.1-39 codex vii">
+  <div class="doc-head"><h3>Schriftelijke instructies biologische agentia</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Beschikbaar op de werkplek</div>
+  
+  <div class="meta"><span class="art">art. VII.1-39 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20VII%20titel%201%20Algemene%20bepalingen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="IX">Boek IX — Collectieve en persoonlijke bescherming</h2>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="algemene informatienota pbm vóór gebruik van pbm; bijwerken bij wijziging of nieuwe gebruikservaring art. ix.2-23 §1-§3 codex ix">
+  <div class="doc-head"><h3>Algemene informatienota PBM</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór gebruik van PBM; bijwerken bij wijziging of nieuwe gebruikservaring</div>
+  
+  <div class="meta"><span class="art">art. IX.2-23 §1-§3 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%202%20Persoonlijke%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="beoordeling persoonlijke beschermingsmiddelen (verslagen en elementen) vóór de keuze van een pbm; herzien bij elke wijziging art. ix.2-4 tot ix.2-7 en ix.2-10 codex ix">
+  <div class="doc-head"><h3>Beoordeling persoonlijke beschermingsmiddelen (verslagen en elementen)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de keuze van een PBM; herzien bij elke wijziging</div>
+  
+  <div class="meta"><span class="art">art. IX.2-4 tot IX.2-7 en IX.2-10 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%202%20Persoonlijke%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="bestelbon collectief beschermingsmiddel bij elke aankoop van een cbm art. ix.1-10 en ix.1-13 codex ix">
+  <div class="doc-head"><h3>Bestelbon collectief beschermingsmiddel</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij elke aankoop van een CBM</div>
+  
+  <div class="meta"><span class="art">art. IX.1-10 en IX.1-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%201%20Collectieve%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="bestelbon persoonlijk beschermingsmiddel bij elke aankoop van een pbm art. ix.2-12 en ix.2-15 codex ix">
+  <div class="doc-head"><h3>Bestelbon persoonlijk beschermingsmiddel</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij elke aankoop van een PBM</div>
+  
+  <div class="meta"><span class="art">art. IX.2-12 en IX.2-15 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%202%20Persoonlijke%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="terugkerend" data-hay="controleverslagen collectieve beschermingsmiddelen na plaatsing en vóór gebruik; na elke montage op een nieuwe plek; periodiek volgens fabrikant; na uitzonderlijke gebeurtenissen art. ix.1-15 en ix.1-19 §1-§2 codex ix">
+  <div class="doc-head"><h3>Controleverslagen collectieve beschermingsmiddelen</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Na plaatsing en vóór gebruik; na elke montage op een nieuwe plek; periodiek volgens fabrikant; na uitzonderlijke gebeurtenissen</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Gepaste tijd (niet nader bepaald)</div>
+  <div class="meta"><span class="art">art. IX.1-15 en IX.1-19 §1-§2 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%201%20Collectieve%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="indienststellingsverslag collectief beschermingsmiddel vóór elke indienststelling art. ix.1-12 §3 en ix.1-13 codex ix">
+  <div class="doc-head"><h3>Indienststellingsverslag collectief beschermingsmiddel</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór elke indienststelling</div>
+  
+  <div class="meta"><span class="art">art. IX.1-12 §3 en IX.1-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%201%20Collectieve%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="indienststellingsverslag persoonlijk beschermingsmiddel vóór elke indienststelling art. ix.2-13 §3, ix.2-14 en ix.2-15 codex ix">
+  <div class="doc-head"><h3>Indienststellingsverslag persoonlijk beschermingsmiddel</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór elke indienststelling</div>
+  
+  <div class="meta"><span class="art">art. IX.2-13 §3, IX.2-14 en IX.2-15 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%202%20Persoonlijke%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="instructienota en schriftelijke instructies collectieve beschermingsmiddelen bij aankoop en vóór gebruik; bijwerken met gebruikservaring art. ix.1-10 1e lid 5°, ix.1-14, ix.1-17, ix.1-19 §1 en ix.1-20 codex ix">
+  <div class="doc-head"><h3>Instructienota en schriftelijke instructies collectieve beschermingsmiddelen</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij aankoop en vóór gebruik; bijwerken met gebruikservaring</div>
+  
+  <div class="meta"><span class="art">art. IX.1-10 1e lid 5°, IX.1-14, IX.1-17, IX.1-19 §1 en IX.1-20 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%201%20Collectieve%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="instructienota per type pbm per type pbm vóór gebruik; bijwerken bij wijziging art. ix.2-17, ix.2-20, ix.2-21 en ix.2-23 §2-§3 codex ix">
+  <div class="doc-head"><h3>Instructienota per type PBM</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Per type PBM vóór gebruik; bijwerken bij wijziging</div>
+  
+  <div class="meta"><span class="art">art. IX.2-17, IX.2-20, IX.2-21 en IX.2-23 §2-§3 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%202%20Persoonlijke%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="leveranciersverklaring collectief beschermingsmiddel bij levering art. ix.1-11, ix.1-12 §2 en ix.1-13 codex ix">
+  <div class="doc-head"><h3>Leveranciersverklaring collectief beschermingsmiddel</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij levering</div>
+  
+  <div class="meta"><span class="art">art. IX.1-11, IX.1-12 §2 en IX.1-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%201%20Collectieve%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="leveranciersverklaring persoonlijk beschermingsmiddel bij levering art. ix.2-13 §2 en ix.2-15 codex ix">
+  <div class="doc-head"><h3>Leveranciersverklaring persoonlijk beschermingsmiddel</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij levering</div>
+  
+  <div class="meta"><span class="art">art. IX.2-13 §2 en IX.2-15 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%202%20Persoonlijke%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="IX" data-soort="bij gebeurtenis" data-hay="risicoanalyse collectieve beschermingsmiddelen (verslagen en elementen) vóór de keuze van cbm; herzien bij elke significante wijziging art. ix.1-4 tot ix.1-8 en ix.1-13 codex ix">
+  <div class="doc-head"><h3>Risicoanalyse collectieve beschermingsmiddelen (verslagen en elementen)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de keuze van CBM; herzien bij elke significante wijziging</div>
+  
+  <div class="meta"><span class="art">art. IX.1-4 tot IX.1-8 en IX.1-13 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IX%20titel%201%20Collectieve%20beschermingsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="X">Boek X — Bijzondere werknemerscategorieën en situaties</h2>
+<article class="doc" data-boek="X" data-soort="bij gebeurtenis" data-hay="informatiedocument dienstboden en huispersoneel vóór de aanvang van de dienstbetrekking; bijwerken bij wijziging van de risicoanalyse (voorstel) art. x.6-4, § 2 codex x">
+  <div class="doc-head"><h3>Informatiedocument dienstboden en huispersoneel</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de aanvang van de dienstbetrekking; bijwerken bij wijziging van de risicoanalyse (voorstel)</div>
+  
+  <div class="meta"><span class="art">art. X.6-4, § 2 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20X%20titel%206%20Dienstboden%20en%20huispersoneel.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="X" data-soort="bij gebeurtenis" data-hay="informatiedocument stagiair vóór de stagiair aan een werkpost of activiteit met gezondheidstoezicht wordt tewerkgesteld art. x.4-5 codex x">
+  <div class="doc-head"><h3>Informatiedocument stagiair</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de stagiair aan een werkpost of activiteit met gezondheidstoezicht wordt tewerkgesteld</div>
+  
+  <div class="meta"><span class="art">art. X.4-5 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20X%20titel%204%20Stagiairs.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="X" data-soort="melding/deadline" data-hay="risicoanalyse moederschapsbescherming (resultaten en algemene maatregelen) vooraf, als onderdeel van de risicoanalyse, voor elke activiteit die een risico kan inhouden; individuele beoordeling zodra een werkneemster haar zwangerschap of borstvoeding meldt (art. x.5-4 codex; art. 41 arbeidswet 16/3/1971) art. x.5-4, x.5-5, x.5-6 codex; art. 41 arbeidswet 16/3/1971 x">
+  <div class="doc-head"><h3>Risicoanalyse moederschapsbescherming (resultaten en algemene maatregelen)</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Vooraf, als onderdeel van de risicoanalyse, voor elke activiteit die een risico kan inhouden; individuele beoordeling zodra een werkneemster haar zwangerschap of borstvoeding meldt (art. X.5-4 Codex; art. 41 Arbeidswet 16/3/1971)</div>
+  
+  <div class="meta"><span class="art">art. X.5-4, X.5-5, X.5-6 Codex; art. 41 Arbeidswet 16/3/1971</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20X%20titel%205%20Moederschapsbescherming.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="X" data-soort="bij gebeurtenis" data-hay="werkpostfiche uitzendarbeid vóór de terbeschikkingstelling, na advies van het comité; per werkpost of functie met verplicht gezondheidstoezicht art. x.2-3, x.2-4, x.2-5, x.2-11 §2, x.2-17, x.2-18 en bijlage x.2-1 codex x">
+  <div class="doc-head"><h3>Werkpostfiche uitzendarbeid</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de terbeschikkingstelling, na advies van het Comité; per werkpost of functie met verplicht gezondheidstoezicht</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Tijdens de duur van de tewerkstelling (Codex legt geen langere termijn op)</div>
+  <div class="meta"><span class="art">art. X.2-3, X.2-4, X.2-5, X.2-11 §2, X.2-17, X.2-18 en bijlage X.2-1 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20X%20titel%202%20Uitzendarbeid.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<h2 class="grp" data-boek="Buiten Codex">Boek Buiten Codex</h2>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="aanstellingsovereenkomst coördinator veiligheid en gezondheid vóór de start van ontwerp resp. uitvoering art. 4quinquies, 4quaterdecies, 9, 10, 20, 21 kb bouwplaatsen buiten codex">
+  <div class="doc-head"><h3>Aanstellingsovereenkomst coördinator veiligheid en gezondheid</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de start van ontwerp resp. uitvoering</div>
+  
+  <div class="meta"><span class="art">art. 4quinquies, 4quaterdecies, 9, 10, 20, 21 KB bouwplaatsen</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/besluit/2001/01/25/2001012050/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="melding/deadline" data-hay="advies pa psychosociale aspecten (formeel verzoek) binnen 3 maanden na aanvaarding (verlengbaar met 3 maanden) art. i.3-24, i.3-25 codex buiten codex">
+  <div class="doc-head"><h3>Advies PA psychosociale aspecten (formeel verzoek)</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Binnen 3 maanden na aanvaarding (verlengbaar met 3 maanden)</div>
+  <div class="bew"><span class="lbl">Bewaren</span> In het individuele dossier (20 jaar)</div>
+  <div class="meta"><span class="art">art. I.3-24, I.3-25 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%203%20Preventie%20van%20psychosociale%20risico%E2%80%99s%20op%20het%20werk.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="arbeidsreglement – welzijnsonderdelen bij wijziging art. i.4-71/2, i.3-10, iii.1-43 codex (en wet 8/4/1965 arbeidsreglementen); art. 32noniesdecies welzijnswet buiten codex">
+  <div class="doc-head"><h3>Arbeidsreglement – welzijnsonderdelen</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij wijziging</div>
+  
+  <div class="meta"><span class="art">art. I.4-71/2, I.3-10, III.1-43 Codex (en wet 8/4/1965 arbeidsreglementen); art. 32noniesdecies welzijnswet</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%204%20Maatregelen%20in%20verband%20met%20het%20gezondheidstoezicht%20op%20de%20werknemers.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="coördinatiedagboek doorlopend tijdens ontwerp en uitvoering art. 3, 7°, 11, 22, 31-33 en bijlage i, deel b kb bouwplaatsen buiten codex">
+  <div class="doc-head"><h3>Coördinatiedagboek</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Doorlopend tijdens ontwerp en uitvoering</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd; overgedragen aan de opdrachtgever</div>
+  <div class="meta"><span class="art">art. 3, 7°, 11, 22, 31-33 en bijlage I, deel B KB bouwplaatsen</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/besluit/2001/01/25/2001012050/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="documentatie (installatiedossier) elektrische installaties aanleggen en actueel houden bij wijziging van de installatie art. iii.2-21 en bijlage iii.2-2 codex buiten codex">
+  <div class="doc-head"><h3>Documentatie (installatiedossier) elektrische installaties</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Aanleggen en actueel houden bij wijziging van de installatie</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd (verslagen: minstens het eerste/gelijkvormigheidsverslag en de laatste twee periodieke verslagen)</div>
+  <div class="meta"><span class="art">art. III.2-21 en bijlage III.2-2 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20III%20titel%202%20Elektrische%20installaties.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="economische en financiële informatie aan het comité basisinformatie binnen 2 maanden na (her)verkiezing; jaarlijks binnen 3 maanden na afsluiting boekjaar, stukken 15 dagen vóór de vergadering art. 65bis t.e.m. 65sexies welzijnswet buiten codex">
+  <div class="doc-head"><h3>Economische en financiële informatie aan het Comité</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Basisinformatie binnen 2 maanden na (her)verkiezing; jaarlijks binnen 3 maanden na afsluiting boekjaar, stukken 15 dagen vóór de vergadering</div>
+  
+  <div class="meta"><span class="art">art. 65bis t.e.m. 65sexies welzijnswet</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/wet/1996/08/04/1996012650/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="globaal preventieplan (gpp) voor 5 jaar; minstens om de 5 jaar een nieuw plan; elke wijziging vooraf voor advies aan het comité art. i.2-8, i.2-10, i.2-12 codex; art. vi.1-13; viii.1-4; x.1-3, §2; x.3-6; v.1-4; v.3-10; v.4-8 buiten codex">
+  <div class="doc-head"><h3>Globaal preventieplan (GPP)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Voor 5 jaar; minstens om de 5 jaar een nieuw plan; elke wijziging vooraf voor advies aan het Comité</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd in Boek I titel 2</div>
+  <div class="meta"><span class="art">art. I.2-8, I.2-10, I.2-12 Codex; art. VI.1-13; VIII.1-4; X.1-3, §2; X.3-6; V.1-4; V.3-10; V.4-8</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%202%20Algemene%20beginselen%20betreffende%20het%20welzijnsbeleid.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="huishoudelijk reglement comité bij oprichting; volgens wijzigingsprocedure art. ii.7-31 codex buiten codex">
+  <div class="doc-head"><h3>Huishoudelijk reglement Comité</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij oprichting; volgens wijzigingsprocedure</div>
+  
+  <div class="meta"><span class="art">art. II.7-31 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%207%20Comit%C3%A9s%20PBW.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="identificatiedocument interne dienst bijhouden en actualiseren bij wijziging art. ii.1-7, ii.2-17 §4 codex buiten codex">
+  <div class="doc-head"><h3>Identificatiedocument interne dienst</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Bijhouden en actualiseren bij wijziging</div>
+  
+  <div class="meta"><span class="art">art. II.1-7, II.2-17 §4 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%201%20IDPB.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="individueel dossier formeel verzoek psychosociale interventie openen bij elk formeel verzoek, bijhouden tot afsluiting art. i.3-31 t.e.m. i.3-34, i.3-41 codex buiten codex">
+  <div class="doc-head"><h3>Individueel dossier formeel verzoek psychosociale interventie</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Openen bij elk formeel verzoek, bijhouden tot afsluiting</div>
+  <div class="bew"><span class="lbl">Bewaren</span> 20 jaar vanaf de indiening</div>
+  <div class="meta"><span class="art">art. I.3-31 t.e.m. I.3-34, I.3-41 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%203%20Preventie%20van%20psychosociale%20risico%E2%80%99s%20op%20het%20werk.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="intern noodplan wanneer de risicoanalyse het vereist art. i.2-23, iii.3-23 codex; art. vi.1-21, vi.1-26, vii.1-75 5°; art. 11 en 14 en bijlage 4 samenwerkingsakkoord seveso buiten codex">
+  <div class="doc-head"><h3>Intern noodplan</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Wanneer de risicoanalyse het vereist</div>
+  
+  <div class="meta"><span class="art">art. I.2-23, III.3-23 Codex; art. VI.1-21, VI.1-26, VII.1-75 5°; art. 11 en 14 en bijlage 4 samenwerkingsakkoord Seveso</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%202%20Algemene%20beginselen%20betreffende%20het%20welzijnsbeleid.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="melding/deadline" data-hay="kennisgeving ernstig ongeval zelfstandige aannemer binnen 15 kalenderdagen na het ongeval art. 54 kb bouwplaatsen buiten codex">
+  <div class="doc-head"><h3>Kennisgeving ernstig ongeval zelfstandige aannemer</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Binnen 15 kalenderdagen na het ongeval</div>
+  
+  <div class="meta"><span class="art">art. 54 KB bouwplaatsen</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/besluit/2001/01/25/2001012050/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="kennisgeving seveso-inrichting nieuwe inrichting ≥ 4 maanden vóór inbedrijfstelling of wijziging; bijwerking vóór wijziging art. 7 en 10 samenwerkingsakkoord seveso buiten codex">
+  <div class="doc-head"><h3>Kennisgeving Seveso-inrichting</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Nieuwe inrichting ≥ 4 maanden vóór inbedrijfstelling of wijziging; bijwerking vóór wijziging</div>
+  
+  <div class="meta"><span class="art">art. 7 en 10 samenwerkingsakkoord Seveso</span><a class="bron" href="https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=nl&amp;numac_search=2016A12077&amp;pd_search=2016-04-20&amp;lg_txt=N&amp;caller=list&amp;page=1" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="melding/deadline" data-hay="melding en omstandig (of voorlopig) verslag ernstig arbeidsongeval melding onmiddellijk; omstandig verslag binnen 10 dagen, anders voorlopig verslag binnen 10 dagen art. i.6-3 t.e.m. i.6-6 codex (art. 94ter e.v. welzijnswet) buiten codex">
+  <div class="doc-head"><h3>Melding en omstandig (of voorlopig) verslag ernstig arbeidsongeval</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Melding onmiddellijk; omstandig verslag binnen 10 dagen, anders voorlopig verslag binnen 10 dagen</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd in titel 6</div>
+  <div class="meta"><span class="art">art. I.6-3 t.e.m. I.6-6 Codex (art. 94ter e.v. welzijnswet)</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%206%20Maatregelen%20in%20geval%20van%20arbeidsongeval.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="offertedocument vgp en afzonderlijke prijsberekening bij de offerte art. 30 kb bouwplaatsen buiten codex">
+  <div class="doc-head"><h3>Offertedocument VGP en afzonderlijke prijsberekening</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij de offerte</div>
+  
+  <div class="meta"><span class="art">art. 30 KB bouwplaatsen</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/besluit/2001/01/25/2001012050/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="onthaaldocument (ondertekend) bij indiensttreding van elke werknemer art. i.2-11, i.2-15 codex; art. x.2-11, x.3-7, x.4-8 buiten codex">
+  <div class="doc-head"><h3>Onthaaldocument (ondertekend)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Bij indiensttreding van elke werknemer</div>
+  
+  <div class="meta"><span class="art">art. I.2-11, I.2-15 Codex; art. X.2-11, X.3-7, X.4-8</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%202%20Algemene%20beginselen%20betreffende%20het%20welzijnsbeleid.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="melding/deadline" data-hay="oproeping, agenda en notulen comité oproeping ≥ 8 dagen vooraf; aanplakking agenda ≥ 8 dagen vooraf; notulen ≥ 8 dagen vóór volgende vergadering; conclusies binnen 8 dagen bekendmaken art. ii.7-22, ii.7-24 codex buiten codex">
+  <div class="doc-head"><h3>Oproeping, agenda en notulen Comité</h3><span class="soort s-melding">melding/deadline</span></div>
+  <div class="termijn">Oproeping ≥ 8 dagen vooraf; aanplakking agenda ≥ 8 dagen vooraf; notulen ≥ 8 dagen vóór volgende vergadering; conclusies binnen 8 dagen bekendmaken</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Volgens huishoudelijk reglement</div>
+  <div class="meta"><span class="art">art. II.7-22, II.7-24 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20II%20titel%207%20Comit%C3%A9s%20PBW.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="organisatie en procedures eerste hulp (risicoanalyse eerste hulp) opstellen en periodiek evalueren en aanpassen art. i.5-2, i.5-3, i.5-4, i.5-6, i.5-9 codex buiten codex">
+  <div class="doc-head"><h3>Organisatie en procedures eerste hulp (risicoanalyse eerste hulp)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Opstellen en periodiek evalueren en aanpassen</div>
+  
+  <div class="meta"><span class="art">art. I.5-2, I.5-3, I.5-4, I.5-6, I.5-9 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%205%20Eerste%20hulp.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="overeenkomst met aannemer (welzijnsbedingen) vóór de start van de werken art. 9, §2, 2°, 10, §2, 29, 2° en 94ter, §2 welzijnswet buiten codex">
+  <div class="doc-head"><h3>Overeenkomst met aannemer (welzijnsbedingen)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de start van de werken</div>
+  
+  <div class="meta"><span class="art">art. 9, §2, 2°, 10, §2, 29, 2° en 94ter, §2 welzijnswet</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/wet/1996/08/04/1996012650/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="postinterventiedossier (pid) opgeleverd bij (voorlopige) oplevering met pv van overdracht art. 3, 8°, 4sexies, 11, 22, 34-36bis, 43, 48-49bis en bijlage i, deel c kb bouwplaatsen buiten codex">
+  <div class="doc-head"><h3>Postinterventiedossier (PID)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Opgeleverd bij (voorlopige) oplevering met PV van overdracht</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Levensduur bouwwerk; mee over te dragen bij verkoop (vermelding in akte)</div>
+  <div class="meta"><span class="art">art. 3, 8°, 4sexies, 11, 22, 34-36bis, 43, 48-49bis en bijlage I, deel C KB bouwplaatsen</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/besluit/2001/01/25/2001012050/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="preventiebeleid zware ongevallen (pbzo) herzien minstens om de 5 jaar en vóór belangrijke wijzigingen art. 6 en 10 samenwerkingsakkoord seveso buiten codex">
+  <div class="doc-head"><h3>Preventiebeleid zware ongevallen (PBZO)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Herzien minstens om de 5 jaar en vóór belangrijke wijzigingen</div>
+  
+  <div class="meta"><span class="art">art. 6 en 10 samenwerkingsakkoord Seveso</span><a class="bron" href="https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=nl&amp;numac_search=2016A12077&amp;pd_search=2016-04-20&amp;lg_txt=N&amp;caller=list&amp;page=1" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="schriftelijke overeenkomst tussen tussenkomende partijen (kleine bouwplaats) vóór de werken art. 29 kb bouwplaatsen buiten codex">
+  <div class="doc-head"><h3>Schriftelijke overeenkomst tussen tussenkomende partijen (kleine bouwplaats)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór de werken</div>
+  
+  <div class="meta"><span class="art">art. 29 KB bouwplaatsen</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/besluit/2001/01/25/2001012050/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="veiligheids- en gezondheidsplan (vgp) vóór opening bouwplaats; bijwerken bij wijzigingen, stand der werken, nieuwe risico&#x27;s, komst of vertrek van partijen art. 3, 6°, 4sexies, 11, 22, 26-28, 30 en bijlage i, deel a kb bouwplaatsen; art. 16, 2° en 18 welzijnswet buiten codex">
+  <div class="doc-head"><h3>Veiligheids- en gezondheidsplan (VGP)</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Vóór opening bouwplaats; bijwerken bij wijzigingen, stand der werken, nieuwe risico&#x27;s, komst of vertrek van partijen</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Niet vastgelegd; overgedragen aan de opdrachtgever</div>
+  <div class="meta"><span class="art">art. 3, 6°, 4sexies, 11, 22, 26-28, 30 en bijlage I, deel A KB bouwplaatsen; art. 16, 2° en 18 welzijnswet</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/besluit/2001/01/25/2001012050/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="veiligheidsbeheersysteem seveso (procedures) doorlopend; herzien bij wijzigingen (art. 10) art. 6, §4 en bijlage 2 samenwerkingsakkoord seveso buiten codex">
+  <div class="doc-head"><h3>Veiligheidsbeheersysteem Seveso (procedures)</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Doorlopend; herzien bij wijzigingen (art. 10)</div>
+  
+  <div class="meta"><span class="art">art. 6, §4 en bijlage 2 samenwerkingsakkoord Seveso</span><a class="bron" href="https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=nl&amp;numac_search=2016A12077&amp;pd_search=2016-04-20&amp;lg_txt=N&amp;caller=list&amp;page=1" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="veiligheidsrapport seveso nieuwe inrichting ≥ 3 maanden vóór inbedrijfstelling; herzien minstens om de 5 jaar, na zwaar ongeval en bij nieuwe kennis art. 8, 10, 23, 28 en bijlage 3 samenwerkingsakkoord seveso buiten codex">
+  <div class="doc-head"><h3>Veiligheidsrapport Seveso</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Nieuwe inrichting ≥ 3 maanden vóór inbedrijfstelling; herzien minstens om de 5 jaar, na zwaar ongeval en bij nieuwe kennis</div>
+  
+  <div class="meta"><span class="art">art. 8, 10, 23, 28 en bijlage 3 samenwerkingsakkoord Seveso</span><a class="bron" href="https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=nl&amp;numac_search=2016A12077&amp;pd_search=2016-04-20&amp;lg_txt=N&amp;caller=list&amp;page=1" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="terugkerend" data-hay="verslagen van controles van arbeidsmiddelen na installatie en vóór eerste gebruik; na elke montage op nieuwe plaats; periodiek bij verslechterende invloeden; na uitzonderlijke gebeurtenissen art. iv.2-14 codex buiten codex">
+  <div class="doc-head"><h3>Verslagen van controles van arbeidsmiddelen</h3><span class="soort s-terugkerend">terugkerend</span></div>
+  <div class="termijn">Na installatie en vóór eerste gebruik; na elke montage op nieuwe plaats; periodiek bij verslechterende invloeden; na uitzonderlijke gebeurtenissen</div>
+  <div class="bew"><span class="lbl">Bewaren</span> Gepaste tijd (niet nader bepaald)</div>
+  <div class="meta"><span class="art">art. IV.2-14 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20IV%20titel%202%20Bepalingen%20van%20toepassing%20op%20alle%20arbeidsmiddelen.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="voorafgaande kennisgeving bouwplaats ≥ 15 kalenderdagen vóór start; aanplakken ≥ 10 kalenderdagen vóór start (dringend: dag van start) art. 45-47 en bijlage ii kb bouwplaatsen buiten codex">
+  <div class="doc-head"><h3>Voorafgaande kennisgeving bouwplaats</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">≥ 15 kalenderdagen vóór start; aanplakken ≥ 10 kalenderdagen vóór start (dringend: dag van start)</div>
+  
+  <div class="meta"><span class="art">art. 45-47 en bijlage II KB bouwplaatsen</span><a class="bron" href="https://www.ejustice.just.fgov.be/eli/besluit/2001/01/25/2001012050/justel" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+<article class="doc" data-boek="Buiten Codex" data-soort="bij gebeurtenis" data-hay="vormingsprogramma welzijn op basis van het gpp art. i.2-18 codex buiten codex">
+  <div class="doc-head"><h3>Vormingsprogramma welzijn</h3><span class="soort s-bij gebeurtenis">bij gebeurtenis</span></div>
+  <div class="termijn">Op basis van het GPP</div>
+  
+  <div class="meta"><span class="art">art. I.2-18 Codex</span><a class="bron" href="https://employment.belgium.be/sites/default/files/content/documents/Welzijn%20op%20het%20werk/Regelgeving/Codex%20boek%20I%20titel%202%20Algemene%20beginselen%20betreffende%20het%20welzijnsbeleid.pdf" target="_blank" rel="noopener">officiële wettekst ↗</a></div>
+</article>
+</main>
+<p class="empty" id="empty" hidden>Geen documenten voor deze zoekopdracht of filter.</p>
+
+<footer>
+  <div class="fr">Deze pagina is er voorlopig in het Nederlands. Een Franstalige versie komt er op vraag — laat het weten in de groep.</div>
+  <p>Dit overzicht is informatief en volgt onze eigen telling van de Codex over het welzijn op het werk (stand november 2026). De officiële en bindende tekst is altijd die van de wetgever; volg bij twijfel de link naar de officiële bron of raadpleeg je preventieadviseur. Reacties en aanvullingen welkom in de groep.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var q=document.getElementById('q'),fb=document.getElementById('fboek'),fs=document.getElementById('fsoort');
+  var docs=[].slice.call(document.querySelectorAll('.doc'));
+  var grps=[].slice.call(document.querySelectorAll('.grp'));
+  var count=document.getElementById('count'),empty=document.getElementById('empty');
+  function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+  function apply(){
+    var term=q.value.trim().toLowerCase(),b=fb.value,s=fs.value,n=0;
+    docs.forEach(function(d){
+      var ok=(!b||d.dataset.boek===b)&&(!s||d.dataset.soort===s)&&(!term||d.dataset.hay.indexOf(term)>-1);
+      d.hidden=!ok; if(ok)n++;
+    });
+    grps.forEach(function(g){
+      var vis=docs.some(function(d){return d.dataset.boek===g.dataset.boek&&!d.hidden;});
+      g.hidden=!vis;
+    });
+    count.textContent=n+' van 146 documenten';
+    empty.hidden=n>0;
+  }
+  [q,fb,fs].forEach(function(el){el.addEventListener('input',apply);el.addEventListener('change',apply);});
+  apply();
+})();
+</script>
+</body>
+</html>
